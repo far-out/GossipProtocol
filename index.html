@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="gossipApp">
+	<head>
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="app.css">
+
+		<title>My Gossip App</title>
+
+		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
+		<script src="lib/angular-cookies.min.js"></script>
+		<script src="lib/angular-resource.min.js"></script>
+		<script src="lib/angular-ui-router.min.js"></script>
+
+		<script src="controllers/listController.js"></script>
+		<script src="controllers/bodyController.js"></script>
+		<script src="app.js"></script>
+	</head>
+
+	<body ng-controller="bodyController">
+		<div class="jumbotron">
+			<div class="container">
+				<div class="row">
+					<span class="col-md-8">
+						<h2>Welcome to my Gossip App!</h2>
+					</span>
+					<span class="col-md-4">
+						<form class="form-inline" style="margin-bottom:10px;">
+							<input class="form-control" type="text" name="newUser" ng-model="newUser" placeholder="First Name"/>
+							<button class="btn btn-primary" ng-disabled="!newUser" ng-click="createNewUser()">Create New User</button>
+						</form>
+
+						<form class="form-inline" ng-if="!loggedInUser.name">
+							<input class="form-control" type="text" name="username" ng-model="$parent.username" placeholder="First Name"/>
+							<button class="btn btn-primary" ng-disabled="!$parent.username" ng-click="login()">Login</button>
+						</form>
+
+						<form class="form-inline" ng-if="loggedInUser.name">
+							<label style="padding: 8px;">Logged in as '{{loggedInUser.name}}'</label>
+							<button class="btn btn-primary pull-right" ng-click="logout()" style="margin-right: 50px;">Logout</button>
+						</form>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<div ui-view></div>
+
+	</body>
+</html>

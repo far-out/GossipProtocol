@@ -1,0 +1,20 @@
+<div class="container">
+    <div ng-if="loggedInUser.name">
+        <p>Add Peer:</p>
+        <form class="form-inline" style="margin-bottom:10px;">
+            <input class="form-control" type="text" name="newPeerUrl" ng-model="newPeer.url" placeholder="URL"/>
+            <button class="btn btn-primary" ng-click="addNewPeer()">Add Peer</button>
+        </form>
+
+        <p>Chat:</p>
+        <textarea ng-model="vars.formattedMessages" rows="10" cols="100" readonly style="padding:10px;"/>
+
+        <form class="form-inline" style="margin-bottom:10px;">
+            <input class="form-control" type="text" size="80" name="comment" ng-model="vars.comment" placeholder="Comment here"/>
+            <button class="btn btn-primary" ng-click="submitComment()">Submit</button>
+        </form>
+    </div>
+    <div ng-if="!loggedInUser.name">
+        <p>Please log in</p>
+    </div>
+</div>

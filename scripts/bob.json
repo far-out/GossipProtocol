@@ -1,0 +1,1 @@
+[[{"uuid":"b71ea555-d436-4c65-8bcf-85eae559ddf1","Want":1}],[{"EndPoint":"http:\/\/ec2-54-165-61-57.compute-1.amazonaws.com\/gossip\/scripts\/receiveMessage.php?name=susan","Want":null}],{"MessageID":"b71ea555-d436-4c65-8bcf-85eae559ddf0:0","Originator":"bob","Text":"hey all"},{"MessageID":"b71ea555-d436-4c65-8bcf-85eae559ddf1:0","Originator":"susan","Text":"Hey everyone"}]
