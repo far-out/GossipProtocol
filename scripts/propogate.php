@@ -17,7 +17,7 @@ if (sizeof($myData[1]) < 1){
 $randType = rand(0,1);
 
 $randEndPoint = rand(0,(sizeof($myData[1]))-1);
-print "randendpoint = $randEndPoint\n";
+//print "randendpoint = $randEndPoint\n";
 
 $toSend = new stdClass();
 $toSend->EndPoint = "http://ec2-54-165-61-57.compute-1.amazonaws.com/gossip/scripts/receiveMessage.php?name=".$user;
