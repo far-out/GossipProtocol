@@ -20,7 +20,8 @@ $randEndPoint = rand(0,(sizeof($myData[1]))-1);
 //print "randendpoint = $randEndPoint\n";
 
 $toSend = new stdClass();
-$toSend->EndPoint = "http://ec2-54-165-61-57.compute-1.amazonaws.com/gossip/scripts/receiveMessage.php?name=".$user;
+$toSend->EndPoint = "http://ec2-54-165-61-57.compute-1.amazonaws.com/localgossiper/scripts/receiveMessage.php?name=".$user;
+print $toSend->EndPoint;
 
 if ($randType){
     $toSend->Want = new stdClass();
